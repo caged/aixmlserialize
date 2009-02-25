@@ -28,6 +28,90 @@
 
 - (NSMutableDictionary *)toDictionary
 {
+    id out, rawObj;
+    NSXMLNode *node;
+    NSArray *nodes = [self children];
+    NSString *elName = [self name], *key;
+    NSDictionary *attrs = [self attributesAsDictionary];
+    NSString *type = [attrs valueForKey:@"type"];
+    NSMutableDictionary *groups = [NSMutableDictionary dictionary];
+    NSMutableArray *objs;
+    
+    if([self kind] == NSXMLTextKind)
+    {
+        return [NSMutableDictionary dictionaryWithObject:[self stringValue] forKey:elName];
+    }
+    
+    for(node in nodes)
+    {
+        if([node kind] == NSXMLElementKind)
+        {
+            NSString *childName = [node name];
+            NSMutableArray *group = [groups objectForKey:childName];
+            if(!group)
+            {
+                group = [NSMutableArray array];
+                [groups setObject:group forKey:childName];
+            }
+
+            [group addObject:node];
+        } 
+        // We're on a text node so the parent node will be this nodes name.
+        else if([node kind] == NSXMLTextKind) 
+        {
+            return [NSMutableDictionary dictionaryWithObject:[node stringValue] forKey:[[node parent] name]];
+        }
+    }
+    
+    // Array
+    if([type isEqualToString:@"array"])
+    {
+        out = [NSMutableArray array];
+        for(key in groups)
+        {
+            NSMutableDictionary *dictRep;
+            objs = [groups objectForKey:key];  
+            for(rawObj in objs)
+            {
+                dictRep = [rawObj toDictionary];
+                [out addObject:[dictRep valueForKey:key]];
+            }
+        }
+        
+        // ?need to flatten out here?
+    }
+    // Dictionary
+    else
+    {
+        out = [NSMutableDictionary dictionary];
+        for(key in groups)
+        {
+            NSMutableDictionary *dictRep;
+            objs = [groups objectForKey:key];
+            if([objs count] == 1)
+            {
+                dictRep = [[objs objectAtIndex:0] toDictionary];
+                [out addEntriesFromDictionary:dictRep];
+            }
+            else
+            {
+                for(rawObj in objs)
+                {
+
+                    //dictRep = [NSMutableDictionary dictionaryWithObject:nil forKey:key];
+                }
+            }
+        }
+        
+        if([attrs count] > 0)
+            [out addEntriesFromDictionary:attrs];
+    }
+    
+    return [NSDictionary dictionaryWithObject:out forKey:elName];
+}
+
+- (NSMutableDictionary *)oldToDictionary
+{
     id out;
     NSMutableDictionary *groups = [NSMutableDictionary dictionary];
     NSXMLNode *node;
