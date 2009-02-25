@@ -162,7 +162,9 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NSXMLSerialize_Prefix.pch;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = NSXMLSerialize;
 			};
 			name = Debug;
@@ -175,7 +177,9 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = NSXMLSerialize_Prefix.pch;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = NSXMLSerialize;
 			};
 			name = Release;
