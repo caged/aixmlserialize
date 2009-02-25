@@ -11,6 +11,13 @@
 
 
 @implementation NSXMLElement (Serialize)
+static NSString *contentItem;
++ (void)initialize
+{
+    if(!contentItem)
+        contentItem = @"content";
+}
+
 - (NSDictionary *)attributesAsDictionary
 {
 	NSArray *attributes = [self attributes];
@@ -56,11 +63,13 @@
 
             [group addObject:node];
         } 
+        // It's really slow when we call back into toDictionary so we can handle text nodes
+        // so comment this out for now.
         // We're on a text node so the parent node will be this nodes name.
-        else if([node kind] == NSXMLTextKind) 
-        {
-            return [NSMutableDictionary dictionaryWithObject:[node stringValue] forKey:[[node parent] name]];
-        }
+        // else if([node kind] == NSXMLTextKind) 
+        // {
+        //     return [NSMutableDictionary dictionaryWithObject:[node stringValue] forKey:[[node parent] name]];
+        // }
     }
     
     // Array
@@ -89,10 +98,47 @@
             NSMutableDictionary *dictRep;
             objs = [groups objectForKey:key];
             if([objs count] == 1)
-            {
-                dictRep = [[objs objectAtIndex:0] toDictionary];
-                [out addEntriesFromDictionary:dictRep];
+            {                
+                // We get a 2x speed increase if we check the rawObject's child
+                // node to see if it's a text node.  If it is, we go ahead and 
+                // add it to the output here instead of running it back through 
+                // toDictionary.
+                rawObj = [objs objectAtIndex:0];
+                node = [rawObj childAtIndex:0];
+                dictRep = [NSMutableDictionary dictionary];
+                if([node kind] == NSXMLTextKind)
+                {
+                    NSDictionary *nodeAttrs = [rawObj attributesAsDictionary]; 
+                    NSString *contents = [node stringValue];
+                    id nodeObj;
+                    
+                    // If this node has attributes and content text we need to 
+                    // create a dictionary for it and use the static contentItem 
+                    // value as a place to store the stringValue.
+                    if(nodeAttrs && contents)
+                    {
+                        nodeObj = [NSMutableDictionary dictionaryWithObject:contents forKey:contentItem];
+                        [nodeObj addEntriesFromDictionary:nodeAttrs];
+                    }
+                    // Else this node only has a string value or is empty so we set 
+                    // it's value to a string.
+                    else
+                    {
+                        nodeObj = contents;
+                    }
+                    
+                    [out setObject:nodeObj forKey:key];
+                }
+                else
+                {
+                    //NSDictionary *nodeAttrs = [(NSXMLElement *)node attributesAsDictionary];
+                    dictRep = [[objs objectAtIndex:0] toDictionary];
+                    [out addEntriesFromDictionary:dictRep];
+                    //[out addEntriesFromDictionary:nodeAttrs];
+                }
             }
+            // Attributes are not being combined with content here.
+            // We need to handle nodes like <foo bar="whut">string content</foo>
             else
             {
                 NSMutableArray *dictCollection = [NSMutableArray array];
