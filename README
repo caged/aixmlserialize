@@ -45,3 +45,8 @@ Simply build the foundation tool (command+B) and run:
     ./benchmark -f FILE_TO_PARSE -p yes
     // -f (REQUIRED) - File to parse
     // -p (OPTIONAL) - Print output
+
+## Running Unit Tests
+1. Build unittests bundle (command+b)
+2. Set otest as active executable
+3. command+alt+y (Run->Debug)

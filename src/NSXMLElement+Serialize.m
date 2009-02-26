@@ -176,6 +176,6 @@ static NSString *contentItem;
             [out addEntriesFromDictionary:attrs];
     }
     
-    return [NSDictionary dictionaryWithObject:out forKey:elName];
+    return [NSMutableDictionary dictionaryWithObject:out forKey:elName];
 }
 @end

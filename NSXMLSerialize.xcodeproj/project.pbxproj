@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8DD76F9A0486AA7600D96B5E /* NSXMLSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* NSXMLSerialize.m */; settings = {ATTRIBUTES = (); }; };
-		8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
-		8DD76F9F0486AA7600D96B5E /* NSXMLSerialize.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859EA3029092ED04C91782 /* NSXMLSerialize.1 */; };
 		D04333F20F5463E80091620E /* NSXMLElement+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D04333F10F5463E80091620E /* NSXMLElement+Serialize.m */; };
 		D04334080F5465050091620E /* NSXMLDocument+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D04334070F5465050091620E /* NSXMLDocument+Serialize.m */; };
+		D04336520F5692230091620E /* XMLSerializationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D04336510F5692230091620E /* XMLSerializationTests.m */; };
+		D04336A30F569B9F0091620E /* NSXMLElement+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D04333F10F5463E80091620E /* NSXMLElement+Serialize.m */; };
+		D04336A40F569BA40091620E /* NSXMLDocument+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D04334070F5465050091620E /* NSXMLDocument+Serialize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -21,7 +22,6 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				8DD76F9F0486AA7600D96B5E /* NSXMLSerialize.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -30,13 +30,15 @@
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* NSXMLSerialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSXMLSerialize.m; sourceTree = "<group>"; };
 		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32A70AAB03705E1F00C91783 /* NSXMLSerialize_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSXMLSerialize_Prefix.pch; sourceTree = "<group>"; };
 		8DD76FA10486AA7600D96B5E /* NSXMLSerialize */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NSXMLSerialize; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6859EA3029092ED04C91782 /* NSXMLSerialize.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = NSXMLSerialize.1; sourceTree = "<group>"; };
 		D04333F00F5463E80091620E /* NSXMLElement+Serialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLElement+Serialize.h"; sourceTree = "<group>"; };
 		D04333F10F5463E80091620E /* NSXMLElement+Serialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLElement+Serialize.m"; sourceTree = "<group>"; };
 		D04334060F5465050091620E /* NSXMLDocument+Serialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLDocument+Serialize.h"; sourceTree = "<group>"; };
 		D04334070F5465050091620E /* NSXMLDocument+Serialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLDocument+Serialize.m"; sourceTree = "<group>"; };
+		D043364B0F5691AE0091620E /* unittests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = unittests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D043364C0F5691AE0091620E /* unittests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "unittests-Info.plist"; sourceTree = "<group>"; };
+		D04336500F5692230091620E /* XMLSerializationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLSerializationTests.h; sourceTree = "<group>"; };
+		D04336510F5692230091620E /* XMLSerializationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLSerializationTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +46,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D04336480F5691AE0091620E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,25 +62,23 @@
 		08FB7794FE84155DC02AAC07 /* NSXMLSerialize */ = {
 			isa = PBXGroup;
 			children = (
-				08FB7795FE84155DC02AAC07 /* Source */,
+				D04336430F56917A0091620E /* tests */,
+				D04336270F5690040091620E /* src */,
+				08FB7795FE84155DC02AAC07 /* benchmark */,
 				C6859EA2029092E104C91782 /* Documentation */,
 				08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
+				D043364C0F5691AE0091620E /* unittests-Info.plist */,
 			);
 			name = NSXMLSerialize;
 			sourceTree = "<group>";
 		};
-		08FB7795FE84155DC02AAC07 /* Source */ = {
+		08FB7795FE84155DC02AAC07 /* benchmark */ = {
 			isa = PBXGroup;
 			children = (
-				32A70AAB03705E1F00C91783 /* NSXMLSerialize_Prefix.pch */,
 				08FB7796FE84155DC02AAC07 /* NSXMLSerialize.m */,
-				D04333F00F5463E80091620E /* NSXMLElement+Serialize.h */,
-				D04333F10F5463E80091620E /* NSXMLElement+Serialize.m */,
-				D04334060F5465050091620E /* NSXMLDocument+Serialize.h */,
-				D04334070F5465050091620E /* NSXMLDocument+Serialize.m */,
 			);
-			name = Source;
+			name = benchmark;
 			sourceTree = "<group>";
 		};
 		08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */ = {
@@ -87,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				8DD76FA10486AA7600D96B5E /* NSXMLSerialize */,
+				D043364B0F5691AE0091620E /* unittests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,9 +101,28 @@
 		C6859EA2029092E104C91782 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
-				C6859EA3029092ED04C91782 /* NSXMLSerialize.1 */,
 			);
 			name = Documentation;
+			sourceTree = "<group>";
+		};
+		D04336270F5690040091620E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				D04333F00F5463E80091620E /* NSXMLElement+Serialize.h */,
+				D04333F10F5463E80091620E /* NSXMLElement+Serialize.m */,
+				D04334060F5465050091620E /* NSXMLDocument+Serialize.h */,
+				D04334070F5465050091620E /* NSXMLDocument+Serialize.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		D04336430F56917A0091620E /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				D04336500F5692230091620E /* XMLSerializationTests.h */,
+				D04336510F5692230091620E /* XMLSerializationTests.m */,
+			);
+			path = tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +146,24 @@
 			productReference = 8DD76FA10486AA7600D96B5E /* NSXMLSerialize */;
 			productType = "com.apple.product-type.tool";
 		};
+		D043364A0F5691AE0091620E /* unittests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D043364F0F5691AF0091620E /* Build configuration list for PBXNativeTarget "unittests" */;
+			buildPhases = (
+				D04336460F5691AE0091620E /* Resources */,
+				D04336470F5691AE0091620E /* Sources */,
+				D04336480F5691AE0091620E /* Frameworks */,
+				D04336490F5691AE0091620E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = unittests;
+			productName = unittests;
+			productReference = D043364B0F5691AE0091620E /* unittests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -133,9 +177,36 @@
 			projectRoot = "";
 			targets = (
 				8DD76F960486AA7600D96B5E /* NSXMLSerialize */,
+				D043364A0F5691AE0091620E /* unittests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D04336460F5691AE0091620E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D04336490F5691AE0091620E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8DD76F990486AA7600D96B5E /* Sources */ = {
@@ -145,6 +216,16 @@
 				8DD76F9A0486AA7600D96B5E /* NSXMLSerialize.m in Sources */,
 				D04333F20F5463E80091620E /* NSXMLElement+Serialize.m in Sources */,
 				D04334080F5465050091620E /* NSXMLDocument+Serialize.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D04336470F5691AE0091620E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D04336520F5692230091620E /* XMLSerializationTests.m in Sources */,
+				D04336A30F569B9F0091620E /* NSXMLElement+Serialize.m in Sources */,
+				D04336A40F569BA40091620E /* NSXMLDocument+Serialize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,10 +242,13 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NSXMLSerialize_Prefix.pch;
+				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = /usr/local/bin;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
 				PRODUCT_NAME = NSXMLSerialize;
 			};
 			name = Debug;
@@ -176,10 +260,13 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NSXMLSerialize_Prefix.pch;
+				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = "";
 				INSTALL_PATH = /usr/local/bin;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
 				PRODUCT_NAME = NSXMLSerialize;
 			};
 			name = Release;
@@ -210,6 +297,60 @@
 			};
 			name = Release;
 		};
+		D043364D0F5691AF0091620E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "unittests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = unittests;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D043364E0F5691AF0091620E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "unittests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = unittests;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -227,6 +368,15 @@
 			buildConfigurations = (
 				1DEB927908733DD40010E9CD /* Debug */,
 				1DEB927A08733DD40010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D043364F0F5691AF0091620E /* Build configuration list for PBXNativeTarget "unittests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D043364D0F5691AF0091620E /* Debug */,
+				D043364E0F5691AF0091620E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
