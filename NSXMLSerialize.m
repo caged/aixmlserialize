@@ -2,7 +2,7 @@
 #import "NSXMLElement+Serialize.h"
 #import "NSXMLDocument+Serialize.h"
 
-#define COUNT 1
+#define COUNT 2500
 
 int main (int argc, const char * argv[]) {
     NSAutoreleasePool *outer = [NSAutoreleasePool new];
@@ -25,13 +25,9 @@ int main (int argc, const char * argv[]) {
     for (int i = 0; i < COUNT; i++) 
     {
         results = [doc toDictionary];
-        // [doc toDictionary];
-        // [doc toDictionary];
-        // [doc toDictionary];
-        // [doc toDictionary];
     }
     double duration = -[start timeIntervalSinceNow];
-    printf("toDictionary ran 2500 times in %f seconds\n",  duration);
+    printf("toDictionary ran %i times in %f seconds\n",  COUNT, duration);
     if(showOutput)
         NSLog(@"Results:%@", results);
     [inner release];

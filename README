@@ -27,11 +27,20 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
 */
 
+## GOALS
+* Work on the iPhone and OS X.  On the iPhone we can replace NSXML* with DDXML* from
+  KissXML (http://code.google.com/p/kissxml/) which aims to be a direct replacement for 
+  NSXML on the iPhone.  
+
 ## TODO
 * Type checking and conversion
 * NSDictionary to XML
+* Check out how to compile using KissXML or NSXML depending if KissXML is available.
+* Allow the benchmark app to specify how many rounds we want.
 
 ## Running the benchmark
+WARNING: committees.xml is 257kb and is parsed over 2500 times so it will take a 
+while.
 Simply build the foundation tool (command+B) and run:
     ./benchmark -f FILE_TO_PARSE -p yes
     // -f (REQUIRED) - File to parse
