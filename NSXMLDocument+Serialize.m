@@ -10,6 +10,10 @@
 #import "NSXMLElement+Serialize.h"
 
 @implementation NSXMLDocument (Serialize)
+/**
+ * Convert NSXMLDocument to an NSDictionary
+ * @see NSXMLElement#toDictionary
+ */
 - (NSDictionary *)toDictionary
 {
    return [[self rootElement] toDictionary];
