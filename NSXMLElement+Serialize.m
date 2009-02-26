@@ -7,8 +7,6 @@
 //
 
 #import "NSXMLElement+Serialize.h"
-#import <libxml/hash.h>
-
 
 @implementation NSXMLElement (Serialize)
 
