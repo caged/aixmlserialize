@@ -36,7 +36,6 @@
 * Type checking and conversion
 * NSDictionary to XML
 * Check out how to compile using KissXML or NSXML depending if KissXML is available.
-* Allow the benchmark app to specify how many rounds we want.
 
 ## Running the benchmark
 WARNING: committees.xml is 257kb and is parsed over 2500 times so it will take a 

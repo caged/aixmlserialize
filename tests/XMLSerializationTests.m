@@ -5,9 +5,19 @@
 //  Created by Justin Palmer on 2/26/09.
 //  Copyright 2009 Alternateidea. All rights reserved.
 //
-#import "XMLSerializationTests.h"
+#import <Foundation/Foundation.h>
+#import <SenTestingKit/SenTestingKit.h>
 #import "NSXMLElement+Serialize.h"
 #import "NSXMLDocument+Serialize.h"
+
+@interface XMLSerializationTests : SenTestCase {    
+    NSDictionary *billDict;
+    NSDictionary *tweetDict;
+    NSDictionary *cmtDict;
+}
+
+@end
+
 
 @implementation XMLSerializationTests
 - (void) setUp
@@ -24,11 +34,24 @@
     tweetDict = [tweetDoc toDictionary];
     cmtDict   = [cmtDoc toDictionary];
     
+    [billDoc release];
+    [tweetDoc release];
+    [cmtDoc release];
 }
 
 - (void) testShouldCreateDictionaryFromXML 
 {
     STAssertTrue([billDict isKindOfClass:[NSDictionary class]], nil);
+}
+
+- (void) testShouldParseAttributes 
+{
+    STAssertTrue([[billDict valueForKeyPath:@"bill.session"] isEqualToString:@"111"], nil);
+}
+
+- (void) testShouldParseSelfClosingTags 
+{
+    STAssertNotNil([billDict valueForKeyPath:@"bill.introduced.date"], nil);
 }
 
 - (void) testShouldCreateArrayFromChildrenIfTypeIsArray 
@@ -49,15 +72,15 @@
     STAssertEqualObjects([title objectForKey:@"content"], @"Providing for consideration of motions to suspend the rules, and for other purposes.", nil);
 }
 
-// Maybe this returns nil when we start type checking?
 - (void)testShouldReturnEmptyStringForElementsWithNoAttributesOrContent:(id)anArgument
 {
     NSDictionary *tweet = [[tweetDict valueForKey:@"statuses"] objectAtIndex:0];
     STAssertEqualObjects([tweet valueForKey:@"in_reply_to_status_id"], @"", nil);
 }
 
-// - (void)testShouldParseAttributesOnRootNode
-// {
-//     STFail(nil, nil);
-// }
+- (void)testShouldParseDeeplyNestedNodes
+{
+    NSDictionary *subCommittee = [[[[cmtDict valueForKeyPath:@"committees.committee"] objectAtIndex:0] valueForKey:@"subcommittee"] objectAtIndex:0];
+    STAssertEqualObjects([subCommittee valueForKeyPath:@"thomas-names.name.content"], @"Forestry, Water Resources, and Environment", nil);
+}
 @end

@@ -37,7 +37,6 @@
 		D04334070F5465050091620E /* NSXMLDocument+Serialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLDocument+Serialize.m"; sourceTree = "<group>"; };
 		D043364B0F5691AE0091620E /* unittests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = unittests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D043364C0F5691AE0091620E /* unittests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "unittests-Info.plist"; sourceTree = "<group>"; };
-		D04336500F5692230091620E /* XMLSerializationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLSerializationTests.h; sourceTree = "<group>"; };
 		D04336510F5692230091620E /* XMLSerializationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLSerializationTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,7 +118,6 @@
 		D04336430F56917A0091620E /* tests */ = {
 			isa = PBXGroup;
 			children = (
-				D04336500F5692230091620E /* XMLSerializationTests.h */,
 				D04336510F5692230091620E /* XMLSerializationTests.m */,
 			);
 			path = tests;
@@ -204,7 +202,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+			shellScript = "# Run the unit tests in this test bundle.\n#\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

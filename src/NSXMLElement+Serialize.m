@@ -98,6 +98,9 @@ static NSString *contentItem;
     }
     
     // Array
+    // We have an element who says it's children should be treated as an array.
+    // Instead of creating {:child_name => {:other, :attrs}} children, we create 
+    // an array of anonymous dictionaries. [{:other, :attrs}, {:other, :attrs}]
     if([type isEqualToString:@"array"])
     {
         out = [NSMutableArray array];
@@ -123,39 +126,8 @@ static NSString *contentItem;
             objs = [groups objectForKey:key];
             if([objs count] == 1)
             {                
-                // We get a 2x speed increase if we check the rawObject's child
-                // node to see if it's a text node.  If it is, we go ahead and 
-                // add it to the output here instead of running it back through 
-                // toDictionary.
-                rawObj = [objs objectAtIndex:0];
-                node = [rawObj childAtIndex:0];
-                dictRep = [NSMutableDictionary dictionary];
-                if([node kind] == NSXMLTextKind)
-                {
-                    NSDictionary *nodeAttrs = [rawObj attributesAsDictionary]; 
-                    NSString *contents = [node stringValue];                    
-                    // If this node has attributes and content text we need to 
-                    // create a dictionary for it and use the static contentItem 
-                    // value as a place to store the stringValue.
-                    if([nodeAttrs count] > 0 && contents)
-                    {
-                        nodeObj = [NSMutableDictionary dictionaryWithObject:contents forKey:contentItem];
-                        [nodeObj addEntriesFromDictionary:nodeAttrs];
-                    }
-                    // Else this node only has a string value or is empty so we set 
-                    // it's value to a string.
-                    else
-                    {
-                        nodeObj = contents;
-                    }
-                    
-                    [out setObject:nodeObj forKey:key];
-                }
-                else
-                {
-                    dictRep = [[objs objectAtIndex:0] toDictionary];
-                    [out addEntriesFromDictionary:dictRep];
-                }
+                dictRep = [[objs objectAtIndex:0] toDictionary];
+                [out addEntriesFromDictionary:dictRep];
             }
             else
             {
