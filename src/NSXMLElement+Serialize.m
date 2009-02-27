@@ -44,7 +44,7 @@ static NSString *contentItem;
     NSString *elName = [self name], *key;
     NSDictionary *attrs = [self attributesAsDictionary];
     NSString *type = [attrs valueForKey:@"type"];
-    NSMutableDictionary *groups = [NSMutableDictionary dictionary], *collectionDict;
+    NSMutableDictionary *groups = [NSMutableDictionary dictionary];
     NSMutableArray *objs;
     
     if([self kind] == NSXMLTextKind)
@@ -139,8 +139,7 @@ static NSString *contentItem;
                     [dictCollection addObject:finalItems];
                 }
                 
-                collectionDict = [NSMutableDictionary dictionaryWithObject:dictCollection forKey:key];
-                [out addEntriesFromDictionary:collectionDict];
+                [out setObject:dictCollection forKey:key];
             }
         }
         
