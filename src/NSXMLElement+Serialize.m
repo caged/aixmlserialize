@@ -30,7 +30,6 @@ static NSString *contentItem;
 	for(i = 0; i < [attributes count]; i++)
 	{
 		NSXMLNode *node = [attributes objectAtIndex:i];
-		
 		[result setObject:[node stringValue] forKey:[node name]];
 	}
 	return result;
@@ -46,11 +45,6 @@ static NSString *contentItem;
     NSString *type = [attrs valueForKey:@"type"];
     NSMutableDictionary *groups = [NSMutableDictionary dictionary];
     NSMutableArray *objs;
-    
-    if([self kind] == NSXMLTextKind)
-    {
-        return [NSMutableDictionary dictionaryWithObject:[self stringValue] forKey:elName];
-    }
     
     for(node in nodes)
     {
@@ -77,6 +71,7 @@ static NSString *contentItem;
             NSXMLElement *containerObj = (NSXMLElement *)[node parent];
             NSDictionary *nodeAttrs = [containerObj attributesAsDictionary]; 
             NSString *contents = [node stringValue];
+            
                         
             // If this node has attributes and content text we need to 
             // create a dictionary for it and use the static contentItem 

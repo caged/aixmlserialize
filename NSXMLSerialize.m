@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "NSXMLElement+Serialize.h"
 #import "NSXMLDocument+Serialize.h"
+#import "NSDictionary+Serialize.h"
 
 #define COUNT 2500
 
@@ -35,11 +36,20 @@ int main (int argc, const char * argv[]) {
     double duration = -[start timeIntervalSinceNow];
     printf("toDictionary ran %i times in %f seconds\n",  runs, duration);
     if(showOutput)
-        NSLog(@"Results:%@", results);
+        //NSLog(@"Results:%@", results);
         
     if(logOutput)
         [[results description] writeToFile:@"log.log" atomically:YES encoding:NSUTF8StringEncoding error:nil];
     [inner release];
+    
+    NSXMLDocument *xmlResults;
+    NSAutoreleasePool *inner2 = [NSAutoreleasePool new];
+    for (int z = 0; z < runs; z++) 
+    {
+        xmlResults = [results toXMLDocument];
+    }
+    NSLog(@"Results:%@", xmlResults);
+    [inner2 release];
     
     [outer release];
     return 0;

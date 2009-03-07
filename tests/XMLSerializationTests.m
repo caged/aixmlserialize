@@ -9,6 +9,7 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import "NSXMLElement+Serialize.h"
 #import "NSXMLDocument+Serialize.h"
+#import "AITypeConversion.h"
 
 @interface XMLSerializationTests : SenTestCase {    
     NSDictionary *billDict;
@@ -82,5 +83,14 @@
 {
     NSDictionary *subCommittee = [[[[cmtDict valueForKeyPath:@"committees.committee"] objectAtIndex:0] valueForKey:@"subcommittee"] objectAtIndex:0];
     STAssertEqualObjects([subCommittee valueForKeyPath:@"thomas-names.name.content"], @"Forestry, Water Resources, and Environment", nil);
+}
+
+- (void) testShouldConvertType 
+{
+    NSString *strInt = @"11";
+    NSNumber *o;
+    [AITypeConversion scanString:strInt intoValue:&o];
+    STAssertTrue([o isKindOfClass:[NSDecimalNumber class]], nil);
+    STAssertEquals([o intValue], 11, nil);
 }
 @end
