@@ -8,24 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8DD76F9A0486AA7600D96B5E /* AIXMLSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* AIXMLSerialize.m */; settings = {ATTRIBUTES = (); }; };
-		D03CA4C70F63B9C60014BE16 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D03CA4C60F63B9C60014BE16 /* libxml2.2.dylib */; };
-		D03CA4D10F63BB490014BE16 /* AIXMLElementSerialize.h in Headers */ = {isa = PBXBuildFile; fileRef = D04333F00F5463E80091620E /* AIXMLElementSerialize.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		D03CA4D20F63BB490014BE16 /* AIXMLDocumentSerialize.h in Headers */ = {isa = PBXBuildFile; fileRef = D04334060F5465050091620E /* AIXMLDocumentSerialize.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		D03CA4D40F63BB490014BE16 /* AIXMLSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C091660F634BB000641101 /* AIXMLSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D03CA4D50F63BB5B0014BE16 /* AIXMLElementSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D04333F10F5463E80091620E /* AIXMLElementSerialize.m */; };
-		D03CA4D60F63BB5B0014BE16 /* AIXMLDocumentSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D04334070F5465050091620E /* AIXMLDocumentSerialize.m */; };
-		D03CA5060F63C32D0014BE16 /* DDXML.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C090DF0F63441C00641101 /* DDXML.h */; };
-		D03CA5070F63C32D0014BE16 /* DDXMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C090E00F63441C00641101 /* DDXMLDocument.h */; };
-		D03CA5080F63C32D0014BE16 /* DDXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C090E20F63441C00641101 /* DDXMLElement.h */; };
-		D03CA5090F63C32D0014BE16 /* DDXMLElementAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C090E40F63441C00641101 /* DDXMLElementAdditions.h */; };
-		D03CA50A0F63C32D0014BE16 /* DDXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C090E60F63441C00641101 /* DDXMLNode.h */; };
-		D03CA50B0F63C32D0014BE16 /* DDXMLPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C090E80F63441C00641101 /* DDXMLPrivate.h */; };
-		D03CA50C0F63C32D0014BE16 /* NSStringAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C090E90F63441C00641101 /* NSStringAdditions.h */; };
-		D03CA50D0F63C34C0014BE16 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C090E10F63441C00641101 /* DDXMLDocument.m */; };
-		D03CA50E0F63C34C0014BE16 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C090E30F63441C00641101 /* DDXMLElement.m */; };
-		D03CA50F0F63C34C0014BE16 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C090E50F63441C00641101 /* DDXMLElementAdditions.m */; };
-		D03CA5100F63C34C0014BE16 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C090E70F63441C00641101 /* DDXMLNode.m */; };
-		D03CA5110F63C34C0014BE16 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C090EA0F63441C00641101 /* NSStringAdditions.m */; };
 		D03CA52A0F63C6C20014BE16 /* AIXMLSerialization.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D0C091660F634BB000641101 /* AIXMLSerialization.h */; };
 		D04333F20F5463E80091620E /* AIXMLElementSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D04333F10F5463E80091620E /* AIXMLElementSerialize.m */; };
 		D04334080F5465050091620E /* AIXMLDocumentSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D04334070F5465050091620E /* AIXMLDocumentSerialize.m */; };
@@ -34,16 +16,29 @@
 		D04336A40F569BA40091620E /* AIXMLDocumentSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D04334070F5465050091620E /* AIXMLDocumentSerialize.m */; };
 		D04338E50F5B65CF0091620E /* NSDictionary+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D04338E40F5B65CF0091620E /* NSDictionary+Serialize.m */; };
 		D04338E60F5B65CF0091620E /* NSDictionary+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D04338E40F5B65CF0091620E /* NSDictionary+Serialize.m */; };
+		D04EF0C60F647A7E003C6240 /* AIXMLElementSerialize.h in Headers */ = {isa = PBXBuildFile; fileRef = D04333F00F5463E80091620E /* AIXMLElementSerialize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D04EF0C70F647A7E003C6240 /* AIXMLDocumentSerialize.h in Headers */ = {isa = PBXBuildFile; fileRef = D04334060F5465050091620E /* AIXMLDocumentSerialize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D04EF0C80F647A7E003C6240 /* NSDictionary+Serialize.h in Headers */ = {isa = PBXBuildFile; fileRef = D04338E30F5B65CF0091620E /* NSDictionary+Serialize.h */; };
 		D0C090F70F63441C00641101 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C090E10F63441C00641101 /* DDXMLDocument.m */; };
 		D0C090F80F63441C00641101 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C090E30F63441C00641101 /* DDXMLElement.m */; };
 		D0C090F90F63441C00641101 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C090E50F63441C00641101 /* DDXMLElementAdditions.m */; };
 		D0C090FA0F63441C00641101 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C090E70F63441C00641101 /* DDXMLNode.m */; };
 		D0C090FB0F63441C00641101 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C090EA0F63441C00641101 /* NSStringAdditions.m */; };
-		D0C091930F634D7800641101 /* AIXMLSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C091660F634BB000641101 /* AIXMLSerialization.h */; };
+		D0C091930F634D7800641101 /* AIXMLSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C091660F634BB000641101 /* AIXMLSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0C091940F634DA200641101 /* AIXMLElementSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D04333F10F5463E80091620E /* AIXMLElementSerialize.m */; };
 		D0C091950F634DA200641101 /* AIXMLDocumentSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D04334070F5465050091620E /* AIXMLDocumentSerialize.m */; };
 		D0C091960F634DA200641101 /* NSDictionary+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = D04338E40F5B65CF0091620E /* NSDictionary+Serialize.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D04EF0D90F647B39003C6240 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0C091880F634D2E00641101 /* AIXMLSerialization */;
+			remoteInfo = AIXMLSerialization;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		8DD76F9E0486AA7600D96B5E /* CopyFiles */ = {
@@ -62,7 +57,6 @@
 		08FB7796FE84155DC02AAC07 /* AIXMLSerialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIXMLSerialize.m; sourceTree = "<group>"; };
 		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8DD76FA10486AA7600D96B5E /* AIXMLSerialize */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AIXMLSerialize; sourceTree = BUILT_PRODUCTS_DIR; };
-		D03CA4910F6381D10014BE16 /* libaixmlserialization.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libaixmlserialization.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03CA4C60F63B9C60014BE16 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		D04333F00F5463E80091620E /* AIXMLElementSerialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIXMLElementSerialize.h; sourceTree = "<group>"; };
 		D04333F10F5463E80091620E /* AIXMLElementSerialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIXMLElementSerialize.m; sourceTree = "<group>"; };
@@ -94,14 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D03CA48F0F6381D10014BE16 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D03CA4C70F63B9C60014BE16 /* libxml2.2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +146,6 @@
 			children = (
 				8DD76FA10486AA7600D96B5E /* AIXMLSerialize */,
 				D043364B0F5691AE0091620E /* unittests.octest */,
-				D03CA4910F6381D10014BE16 /* libaixmlserialization.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,27 +209,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		D03CA48D0F6381D10014BE16 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D03CA5060F63C32D0014BE16 /* DDXML.h in Headers */,
-				D03CA5070F63C32D0014BE16 /* DDXMLDocument.h in Headers */,
-				D03CA5080F63C32D0014BE16 /* DDXMLElement.h in Headers */,
-				D03CA5090F63C32D0014BE16 /* DDXMLElementAdditions.h in Headers */,
-				D03CA50A0F63C32D0014BE16 /* DDXMLNode.h in Headers */,
-				D03CA50B0F63C32D0014BE16 /* DDXMLPrivate.h in Headers */,
-				D03CA50C0F63C32D0014BE16 /* NSStringAdditions.h in Headers */,
-				D03CA4D10F63BB490014BE16 /* AIXMLElementSerialize.h in Headers */,
-				D03CA4D20F63BB490014BE16 /* AIXMLDocumentSerialize.h in Headers */,
-				D03CA4D40F63BB490014BE16 /* AIXMLSerialization.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D0C091840F634D2E00641101 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D04EF0C60F647A7E003C6240 /* AIXMLElementSerialize.h in Headers */,
+				D04EF0C70F647A7E003C6240 /* AIXMLDocumentSerialize.h in Headers */,
+				D04EF0C80F647A7E003C6240 /* NSDictionary+Serialize.h in Headers */,
 				D0C091930F634D7800641101 /* AIXMLSerialization.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,29 +234,13 @@
 			buildRules = (
 			);
 			dependencies = (
+				D04EF0DA0F647B39003C6240 /* PBXTargetDependency */,
 			);
 			name = AIXMLSerialize;
 			productInstallPath = "$(HOME)/bin";
 			productName = AIXMLSerialize;
 			productReference = 8DD76FA10486AA7600D96B5E /* AIXMLSerialize */;
 			productType = "com.apple.product-type.tool";
-		};
-		D03CA4900F6381D10014BE16 /* aixmlserialization */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D03CA4940F6381EF0014BE16 /* Build configuration list for PBXNativeTarget "aixmlserialization" */;
-			buildPhases = (
-				D03CA48D0F6381D10014BE16 /* Headers */,
-				D03CA48E0F6381D10014BE16 /* Sources */,
-				D03CA48F0F6381D10014BE16 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = aixmlserialization;
-			productName = aixmlserialization;
-			productReference = D03CA4910F6381D10014BE16 /* libaixmlserialization.a */;
-			productType = "com.apple.product-type.library.static";
 		};
 		D043364A0F5691AE0091620E /* unittests */ = {
 			isa = PBXNativeTarget;
@@ -337,7 +292,6 @@
 				8DD76F960486AA7600D96B5E /* AIXMLSerialize */,
 				D043364A0F5691AE0091620E /* unittests */,
 				D0C091880F634D2E00641101 /* AIXMLSerialization */,
-				D03CA4900F6381D10014BE16 /* aixmlserialization */,
 			);
 		};
 /* End PBXProject section */
@@ -387,20 +341,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D03CA48E0F6381D10014BE16 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D03CA50D0F63C34C0014BE16 /* DDXMLDocument.m in Sources */,
-				D03CA50E0F63C34C0014BE16 /* DDXMLElement.m in Sources */,
-				D03CA50F0F63C34C0014BE16 /* DDXMLElementAdditions.m in Sources */,
-				D03CA5100F63C34C0014BE16 /* DDXMLNode.m in Sources */,
-				D03CA5110F63C34C0014BE16 /* NSStringAdditions.m in Sources */,
-				D03CA4D50F63BB5B0014BE16 /* AIXMLElementSerialize.m in Sources */,
-				D03CA4D60F63BB5B0014BE16 /* AIXMLDocumentSerialize.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D04336470F5691AE0091620E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -428,6 +368,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D04EF0DA0F647B39003C6240 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0C091880F634D2E00641101 /* AIXMLSerialization */;
+			targetProxy = D04EF0D90F647B39003C6240 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1DEB927508733DD40010E9CD /* Debug */ = {
@@ -492,37 +440,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
-			};
-			name = Release;
-		};
-		D03CA4920F6381D10014BE16 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
-				OTHER_LDFLAGS = "";
-				PREBINDING = NO;
-				PRODUCT_NAME = aixmlserialization;
-				SDKROOT = iphoneos2.2.1;
-			};
-			name = Debug;
-		};
-		D03CA4930F6381D10014BE16 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
-				OTHER_LDFLAGS = "";
-				PREBINDING = NO;
-				PRODUCT_NAME = aixmlserialization;
-				SDKROOT = iphoneos2.2.1;
-				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -655,15 +572,6 @@
 			buildConfigurations = (
 				1DEB927908733DD40010E9CD /* Debug */,
 				1DEB927A08733DD40010E9CD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D03CA4940F6381EF0014BE16 /* Build configuration list for PBXNativeTarget "aixmlserialization" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D03CA4920F6381D10014BE16 /* Debug */,
-				D03CA4930F6381D10014BE16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

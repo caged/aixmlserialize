@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "AIXMLSerialization.h"
+#import <AIXMLSerialization/AIXMLSerialization.h>
 
 #define COUNT 2500
 

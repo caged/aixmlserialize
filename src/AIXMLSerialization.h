@@ -1,6 +1,6 @@
 #if TARGET_OS_IPHONE
 
-#import "DDXML.h"
+#import <AIXMLSerialization/DDXML.h>
 
 #ifndef NSXMLNode
 #define NSXMLNode DDXMLNode
@@ -48,5 +48,5 @@
 
 #endif
 
-#import "AIXMLDocumentSerialize.h"
-#import "AIXMLElementSerialize.h"
+#import <AIXMLSerialization/AIXMLDocumentSerialize.h>
+#import <AIXMLSerialization/AIXMLElementSerialize.h>
