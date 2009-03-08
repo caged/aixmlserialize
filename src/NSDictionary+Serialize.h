@@ -6,6 +6,7 @@
 //  Copyright 2009 Alternateidea. All rights reserved.
 //
 
+#import "AIXMLSerialization.h"
 
 
 // @interface NSDictionary (Serialize)

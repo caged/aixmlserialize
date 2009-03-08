@@ -6,15 +6,15 @@
 //  Copyright 2009 Alternateidea. All rights reserved.
 //
 
-#import "NSXMLDocument+Serialize.h"
-#import "NSXMLElement+Serialize.h"
+#import "AIXMLDocumentSerialize.h"
+#import "AIXMLElementSerialize.h"
 
 @implementation NSXMLDocument (Serialize)
 /**
  * Convert NSXMLDocument to an NSDictionary
  * @see NSXMLElement#toDictionary
  */
-- (NSDictionary *)toDictionary
+- (NSMutableDictionary *)toDictionary
 {
    return [[self rootElement] toDictionary];
 }

@@ -6,6 +6,7 @@
 //  Copyright 2009 Alternateidea. All rights reserved.
 //
 #import <Foundation/Foundation.h>
+#import "AIXMLSerialization.h"
 
 @interface NSXMLElement (Serialize)
 /**

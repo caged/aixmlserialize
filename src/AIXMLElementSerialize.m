@@ -6,7 +6,7 @@
 //  Copyright 2009 Alternateidea. All rights reserved.
 //
 
-#import "NSXMLElement+Serialize.h"
+#import "AIXMLElementSerialize.h"
 
 @implementation NSXMLElement (Serialize)
 
