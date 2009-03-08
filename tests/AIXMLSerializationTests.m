@@ -1,17 +1,15 @@
 //
-//  XMLSerializationTests.m
-//  NSXMLSerialize
+//  AIXMLSerializationTests.m
+//  AIXMLSerialize
 //
 //  Created by Justin Palmer on 2/26/09.
 //  Copyright 2009 Alternateidea. All rights reserved.
 //
 #import <Foundation/Foundation.h>
 #import <SenTestingKit/SenTestingKit.h>
-#import "NSXMLElement+Serialize.h"
-#import "NSXMLDocument+Serialize.h"
-#import "AITypeConversion.h"
+#import "AIXMLSerialization.h"
 
-@interface XMLSerializationTests : SenTestCase {    
+@interface AIXMLSerializationTests : SenTestCase {    
     NSDictionary *billDict;
     NSDictionary *tweetDict;
     NSDictionary *cmtDict;
@@ -20,7 +18,7 @@
 @end
 
 
-@implementation XMLSerializationTests
+@implementation AIXMLSerializationTests
 - (void) setUp
 {
     NSString *billXML  = [NSString stringWithContentsOfFile:@"fixtures/bill.xml"];
@@ -85,12 +83,4 @@
     STAssertEqualObjects([subCommittee valueForKeyPath:@"thomas-names.name.content"], @"Forestry, Water Resources, and Environment", nil);
 }
 
-- (void) testShouldConvertType 
-{
-    NSString *strInt = @"11";
-    NSNumber *o;
-    [AITypeConversion scanString:strInt intoValue:&o];
-    STAssertTrue([o isKindOfClass:[NSDecimalNumber class]], nil);
-    STAssertEquals([o intValue], 11, nil);
-}
 @end
